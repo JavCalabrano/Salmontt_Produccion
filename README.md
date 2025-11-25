@@ -12,6 +12,8 @@
 Proyecto consiste en leer datos de archivos cvs. 
 Se cargan distintos archivos con diferentes propositos. Los datos son manejados por una Clase especalizada.
 
+Para hacer uso de los metodos y las consultas definidas en codigo se debe quitar las baraas inclinada (//) de las lineas de codigo, de esa manera se ejecuta solo la consulta que se desea realizar
+
 El proyecto fue desarrollado a partir de un caso contextualizado, abordando problemáticas reales y proponiendo una solución estructurada, modular y reutilizable.
 
 ---
@@ -22,8 +24,9 @@ El proyecto fue desarrollado a partir de un caso contextualizado, abordando prob
 📁 src/
 ├─ main
 ├── java/org/example
-├──── data/  	# Clase GestorData que contiene los metodos que trabaja con los datos
-├──── model/  	# Clases de dominio (CentroCultivo, Producto)
+├──── data/  	# Clases que trabajan con los datos (Fabrica y Gestor)
+├──── model/  	# Clases de dominio (CentroCultivo, Producto, Direccion)
+├────── entidad/ # Contiene Clases relacionadas a entidades que interactuan con Salmontt (Entidad, Persona, Empresa, Empleado, CLiente)
 ├──── ui/      # main donde se ejecutan los metodos y se realizan ciertas búsquedas
 ├── resources  # Contiene los archivos de datos que lee Clase GestorDatos
 ````
@@ -41,8 +44,8 @@ El proyecto fue desarrollado a partir de un caso contextualizado, abordando prob
 ---
 
 **Repositorio GitHub:** (https://github.com/JavCalabrano/Salmontt_Produccion)
-**Fecha de entrega:** \[17/11/2025]
+**Fecha de entrega:** \[24/11/2025]
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Semana 3 POO - I
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Semana 5 POO - I
