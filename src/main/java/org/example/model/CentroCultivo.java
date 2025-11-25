@@ -1,24 +1,37 @@
 package org.example.model;
 
+import org.example.model.entidad.Empleado;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CentroCultivo {
 
     private String nombre;
-    private String comuna;
+    private Direccion direccion;
     private int produccion;
+    private int cantidadEmpleados;
+    private List<Empleado> empleados = new ArrayList<>();
 
-    public CentroCultivo(String nombre, String comuna, int produccion) {
+    public CentroCultivo(String nombre, Direccion direccion, int produccion) {
         this.nombre = nombre;
-        this.comuna = comuna;
+        this.direccion = direccion;
         this.produccion = produccion;
+    }
+
+    public CentroCultivo(String  nombre, Direccion direccion, int produccion, int cantidadEmpleados) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.produccion = produccion;
+        this.cantidadEmpleados = cantidadEmpleados;
     }
 
     @Override
     public String toString() {
-        return "Sede: " + nombre + " " +
-                "Producción: " + produccion + "\n";
+        return "CentroCultivo: " + nombre +
+                "\nDireccion: " + direccion +
+                "\nProduccion: " + produccion +
+                "\nNro Empleados=" + cantidadEmpleados + "\n\n";
     }
 
     public String getNombre() {
@@ -28,5 +41,7 @@ public class CentroCultivo {
     public int getProduccion() {
         return produccion;
     }
+
+
 }
 

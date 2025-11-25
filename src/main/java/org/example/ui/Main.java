@@ -1,29 +1,42 @@
 package org.example.ui;
 
-import org.example.data.*;
-import org.example.model.CentroCultivo;
-import org.example.model.Producto;
+import org.example.data.FabricaObjetos;
+import org.example.data.GestorData;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLOutput;
+
 
 public class Main {
     static void main (String[] args) {
 
-        //Creando centros de cultivo con datos
-        List<CentroCultivo> listaCentroCultivo = GestorData.creadorCentroCultivo();
-        System.out.println(listaCentroCultivo);
+        //== INSTRUCCIONES DE USO  ==
+        // Descomentar el CODIGO del trabajo que se quiere realizar con los datos de Salmontt
 
-        //Creando Productos con datos
-        List<Producto> listaProducto = GestorData.creadorProducto();
-        System.out.println(listaProducto);
+        //===== SECCION LISTAS DE OBJETOS =======
 
-        //Consulta al sistema con el nombre de la sede y el ID de producto buscado. Formato (String, int)
-        System.out.println(GestorData.produccionEspecificoID("Muermos", 4));
+        //  1. Devuelve una lista con los Centros de Cultivo registrados en el documento listaCentroCultivos.cvs
+        //System.out.println(FabricaObjetos.listarCentroCultivos());
 
-        //Consulta por la Centro cultivo con el registro más alto de entrada unica en el documento
-        System.out.println(GestorData.mayorproduccion());
+        //  2. Devuelve una lista con los Empleados totales de Salmontt registrados en el documento empleados.cvs
+        //System.out.println(FabricaObjetos.listarEmpleados());
 
+        //  3. Devuelve una lista con los CLientes de Salmontt registrados en el documento clientes.cvs
+        //System.out.println(FabricaObjetos.listarCLientes());
+
+        //  4. Devuelve una lista con los Empresas colaboradoras de Salmontt registrados en el documento empresa.cvs
+        //System.out.println(FabricaObjetos.listarEmpresas());
+
+
+        //=== CONSULTAS VARIAS ===
+
+        //Consulta especifica de la produccion de un Centro Cultivo; ingrese el nombre entre las " ". Formato ejemplo: Ranco, Aguas Buenas
+        //System.out.println(GestorData.produccionCentro("nombreCentro"));
+
+        //Consulta por la suma de la producción de los centros de cultivo existentes
+        //System.out.println(GestorData.produccionTotal());
+
+        //Consulta por los salarios que paga el Centro de cultivo por el que se consulta; ingrese el nombre entre las " ". Formato ejemplo: Ranco, Aguas Buenas
+        //System.out.println(GestorData.salariosCentro("nombreCentro"));
 
     }
 }
