@@ -2,7 +2,7 @@ package org.example.model.entidad;
 
 import org.example.model.Direccion;
 
-public class Entidad {
+public abstract class Entidad {
 
     private String nombre;
     private String rutId;

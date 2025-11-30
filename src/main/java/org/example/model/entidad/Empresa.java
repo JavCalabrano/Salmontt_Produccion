@@ -1,6 +1,5 @@
 package org.example.model.entidad;
 
-import org.example.model.CentroCultivo;
 import org.example.model.Direccion;
 import org.example.model.Producto;
 

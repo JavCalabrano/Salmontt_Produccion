@@ -1,47 +1,18 @@
 package org.example.model;
 
-import org.example.model.entidad.Empleado;
+public class CentroCultivo extends UnidadOperativa {
 
-import java.util.ArrayList;
-import java.util.List;
+    private double toneladasProduccion;
 
-public class CentroCultivo {
 
-    private String nombre;
-    private Direccion direccion;
-    private int produccion;
-    private int cantidadEmpleados;
-    private List<Empleado> empleados = new ArrayList<>();
-
-    public CentroCultivo(String nombre, Direccion direccion, int produccion) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.produccion = produccion;
-    }
-
-    public CentroCultivo(String  nombre, Direccion direccion, int produccion, int cantidadEmpleados) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.produccion = produccion;
-        this.cantidadEmpleados = cantidadEmpleados;
+    public CentroCultivo(String nombre, Direccion direccion, int cantidadEmpleados, double toneladasProduccion) {
+        super(nombre, direccion, cantidadEmpleados);
+        this.toneladasProduccion = toneladasProduccion;
     }
 
     @Override
     public String toString() {
-        return "CentroCultivo: " + nombre +
-                "\nDireccion: " + direccion +
-                "\nProduccion: " + produccion +
-                "\nNro Empleados=" + cantidadEmpleados + "\n\n";
+        return super.toString() + "Toneladas producidas: " + toneladasProduccion + "\n";
+
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getProduccion() {
-        return produccion;
-    }
-
-
 }
-
