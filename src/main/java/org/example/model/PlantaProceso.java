@@ -1,9 +1,14 @@
 package org.example.model;
 
+/**
+ * Clase dedicada a la especializacion de las plantas de proceso, es heredera de UnidadOperativa
+ */
+
 public class PlantaProceso extends UnidadOperativa{
 
     private double capacidadProcesamiento;
 
+    //constructor de clase
     public PlantaProceso(String nombre, Direccion direccion, int cantidadEmpleados, double capacidadProcesamiento) {
         super(nombre, direccion, cantidadEmpleados);
         this.capacidadProcesamiento = capacidadProcesamiento;
@@ -11,6 +16,12 @@ public class PlantaProceso extends UnidadOperativa{
 
     @Override
     public String toString() {
-        return super.toString() + "Capacidad procesamiento: " + capacidadProcesamiento + "\n";
+        return super.toString() + "Capacidad procesamiento: " + capacidadProcesamiento;
+    }
+
+    // Metodo creado para sobre carga e identificación de objetos en tiempo de compilación
+    @Override
+    public String getTipo() {
+        return "(Planta Procesadora)";
     }
 }

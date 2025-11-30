@@ -12,7 +12,12 @@ public class CentroCultivo extends UnidadOperativa {
 
     @Override
     public String toString() {
-        return super.toString() + "Toneladas producidas: " + toneladasProduccion + "\n";
+        return super.toString() + "Toneladas producidas: " + toneladasProduccion;
 
+    }
+
+    @Override
+    public String getTipo() {
+        return "(Centro Cultivo)";
     }
 }

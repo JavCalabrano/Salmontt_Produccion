@@ -1,11 +1,12 @@
 package org.example.data;
 
-import org.example.model.UnidadOperativa;
+// Importando clases necesarias e involucradas
 import org.example.model.Direccion;
 import org.example.model.entidad.Cliente;
 import org.example.model.entidad.Empleado;
 import org.example.model.entidad.Empresa;
 
+// Importando utilidades necesarias para los metodos
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,7 +17,6 @@ import java.util.List;
 /**
  * Esta clase se dedica a leer los datos de los diferentes archivos para crear los objetos correspondientes.
  */
-
 public class GestorEntidades {
 
     /**

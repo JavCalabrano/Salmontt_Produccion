@@ -1,9 +1,13 @@
 package org.example.data;
 
+// importando utilidades necesarias para ejecucion de metodos
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Clase especializada en utilidades de filtrado de los datos especificos de los datos de cada Entidad o UnidadOperativa
+ */
 public class GestorData {
 
     /**
@@ -14,7 +18,8 @@ public class GestorData {
     public static int produccionCentro(String centro) {
         String rutaCvs = "C:\\Users\\danie\\IdeaProjects\\Salmontt_Produccion\\src\\main\\resources\\produccion.cvs";
 
-        int total = 0; //asignacion de variable para realizar el conteo
+        //asignacion de variable para realizar el conteo
+        int total = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(rutaCvs))) {
             String linea;
             br.readLine();

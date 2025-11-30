@@ -2,6 +2,9 @@ package org.example.model.entidad;
 
 import org.example.model.Direccion;
 
+/**
+ * Esta clase hereda de Entidad para tomar sus atributos básicos y se distancia de organizaciones para centrarse en individuos que colaboran con Salmontt
+ */
 public class Empleado extends Persona{
 
     private String cargo;
