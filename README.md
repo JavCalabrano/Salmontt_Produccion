@@ -1,4 +1,4 @@
-# 🧠 Evaluación formativa semana 7 – Desarrollo Orientado a Objetos I
+# 🧠 Evaluación sumativa semana 8 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** [Javier Calabrano]
@@ -10,8 +10,8 @@
 
 ## 📘 Descripción general del sistema
 El objetivo del sistema es entender POO
-Se practica la estructura de clases, los conceptos de superclases, polimorfismo y herencia mediante las clases: UnidadOperativa (superclase), PlantaProceso y CentroCultivo (clases hijas)
-Se profundiza en el uso de la sobrecarga de métodos para otorgar mayor flexibilidad al código implementado
+Se practica la implementacion de interfaces y la inplementacion de GUI
+Se logra lo primero, se deja en codigo el intento de lo segundo para posterior revision de errores.
 
 El proyecto fue desarrollado a partir de un caso contextualizado, abordando problemáticas reales y proponiendo una solución estructurada, modular y reutilizable.
 
@@ -43,8 +43,8 @@ El proyecto fue desarrollado a partir de un caso contextualizado, abordando prob
 ---
 
 **Repositorio GitHub:** (https://github.com/JavCalabrano/Salmontt_Produccion)
-**Fecha de entrega:** \[8/12/2025]
+**Fecha de entrega:** \[15/12/2025]
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Semana 7 POO - I
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Semana 8 POO - I
