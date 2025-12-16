@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class CentroCultivo extends UnidadOperativa {
+public class CentroCultivo extends UnidadOperativa implements Registrable {
 
     private double toneladasProduccion;
 
@@ -11,13 +11,12 @@ public class CentroCultivo extends UnidadOperativa {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "Toneladas producidas: " + toneladasProduccion;
-
+    public String mostrarResumen() {
+        return getNombre() + "/" + getTipoEntidad() + "\n" +
+                "Toneladas producidas: " + toneladasProduccion + "\n";
     }
 
-    @Override
-    public String getTipo() {
-        return "(Centro Cultivo)";
+    public String getTipoEntidad() {
+        return "Centro Cultivo";
     }
 }

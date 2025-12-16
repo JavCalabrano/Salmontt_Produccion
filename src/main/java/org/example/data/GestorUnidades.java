@@ -50,9 +50,9 @@ public class GestorUnidades {
 
 
                     //validacion para asignar el tipo correcto de objeto antes de ingresar a la lista centroCultivos
-                    if (partes[4].equals("centro")) {
+                    if (partes[4].equalsIgnoreCase("centro")) {
                         centroCultivos.add(new CentroCultivo(nombre, direccion, cantidadEmpleados, produccion));
-                    } else if (partes[4].equals("planta")) {
+                    } else if (partes[4].equalsIgnoreCase("planta")) {
                         centroCultivos.add(new PlantaProceso(nombre, direccion, cantidadEmpleados, produccion));
                     }
                 }

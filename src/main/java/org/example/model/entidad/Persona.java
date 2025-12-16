@@ -14,4 +14,8 @@ public class Persona extends Entidad {
     public String nombrePersona() {
         return "Nombre: " + getNombre() + " " + apellido;
     }
+
+    public String getApellido() {
+        return apellido;
+    }
 }

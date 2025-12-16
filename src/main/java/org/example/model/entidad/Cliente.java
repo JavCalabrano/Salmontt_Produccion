@@ -2,11 +2,12 @@ package org.example.model.entidad;
 
 import org.example.model.Direccion;
 import org.example.model.Producto;
+import org.example.model.Registrable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Registrable {
 
     private List<Producto> carrito = new ArrayList<>();
 
@@ -15,8 +16,19 @@ public class Cliente extends Persona{
     }
 
     @Override
-    public String toString() {
+    public String mostrarResumen() {
         return nombrePersona() +
-                " / Carrito: " + carrito + "\n";
+                "\nContacto: " + getTelefono() + "/" +  getEmail() + "\n" +
+                "Carrito: " + carrito + "\n";
+    }
+
+    @Override
+    public String getTipoEntidad() {
+        return "Cliente";
+    }
+
+    @Override
+    public String getNombreCompletoEntidad() {
+        return getNombre() + " " + getApellido();
     }
 }

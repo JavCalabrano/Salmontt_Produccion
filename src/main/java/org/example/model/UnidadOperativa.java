@@ -9,7 +9,7 @@ import java.util.List;
  * Clase exclusiva para ser superclase de los distintos tipos de Centro o UnidadesOpertivas de la organización Salmontt
  */
 
-public class UnidadOperativa {
+public class UnidadOperativa implements Registrable {
 
     private String nombre;
     private Direccion direccion;
@@ -23,21 +23,39 @@ public class UnidadOperativa {
         this.cantidadEmpleados = cantidadEmpleados;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + getTipo() +
-                "\nNro Empleados=" + cantidadEmpleados + "\n";
-    }
-
     public String getNombre() {
         return nombre;
     }
 
-    // Metodo creado para sobre carga e identificación de objetos en tiempo de compilación
-    public String getTipo() {
-        return "tipo";
-        // el valor "tipo" esta asignado por defecto / se reemplazará mediante proceso de sobrecarga en clases herederas
+
+    @Override
+    public String mostrarResumen() {
+        return "";
     }
 
+    @Override
+    public String getTipoEntidad() {
+        return "";
+    }
+
+    @Override
+    public String getNombreCompletoEntidad() {
+        return "";
+    }
+
+    @Override
+    public String getRut() {
+        return "";
+    }
+
+    @Override
+    public int getTelefono() {
+        return 0;
+    }
+
+    @Override
+    public String getEmail() {
+        return "";
+    }
 }
 

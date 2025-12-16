@@ -12,23 +12,35 @@ package org.example.ui;
  */
 
 // Importacion de clases necesarias para esta versión
-import org.example.data.GestorUnidades;
+import javax.swing.SwingUtilities;
+import org.example.data.GestorData;
+import org.example.model.Registrable;
 import org.example.model.UnidadOperativa;
+import org.example.gui.PantallaSalmontt;
+
 import java.util.List;
 
 
 public class Main {
-    static void main (String[] args) {
+    static void main(String[] args) {
 
-        //Creacion de objetos y listados en main para interactuar con ellos aqui
-        List<UnidadOperativa> centroCultivos = GestorUnidades.listarUnidadesOperativas();
-
-
-        // Impresion de UnidadesOperativas una a una aplicando la sobrecarga a los objetos de la lista
-        System.out.println("=== UNIDADES OPERATIVAS ===");
-        for (UnidadOperativa centroCultivo : centroCultivos) {
-            System.out.println(centroCultivo.toString());
-            System.out.println("---------------------------");
+        List<Registrable> registrables = GestorData.registrables();
+        for (Registrable registrable : registrables) {
+            if (registrable instanceof UnidadOperativa) {
+                System.out.println(registrable.mostrarResumen());
+            }
         }
+
+
+        /**
+        System.out.println("hola");
+
+        SwingUtilities.invokeLater(() -> {
+            PantallaSalmontt ventanaMain = new PantallaSalmontt();
+
+            ventanaMain.setVisible(true);
+
+        });
+        */
     }
 }

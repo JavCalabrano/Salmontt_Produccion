@@ -1,14 +1,33 @@
 package org.example.data;
 
 // importando utilidades necesarias para ejecucion de metodos
+import org.example.model.Registrable;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase especializada en utilidades de filtrado de los datos especificos de los datos de cada Entidad o UnidadOperativa
  */
 public class GestorData {
+
+    public static List<Registrable> registrables() {
+
+        List<Registrable> registrables = new ArrayList<>();
+
+            for (Registrable registrable : GestorEntidades.listarEntidades()) {
+                registrables.add(registrable);
+            }
+            for (Registrable registrable : GestorUnidades.listarUnidadesOperativas()) {
+                registrables.add(registrable);
+            }
+
+        return registrables;
+    }
+
 
     /**
      * Este metodo realiza una busqueda para sumar las producciones ingresadas para el Centro de cultivo que se consulta

@@ -1,8 +1,9 @@
 package org.example.model.entidad;
 
 import org.example.model.Direccion;
+import org.example.model.Registrable;
 
-public abstract class Entidad {
+public class Entidad implements Registrable {
 
     private String nombre;
     private String rutId;
@@ -27,5 +28,32 @@ public abstract class Entidad {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getRut() {
+        return rutId;
+    }
+
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String mostrarResumen() {
+        return "";
+    }
+
+    public String getTipoEntidad() {
+        return "";
+    }
+
+    @Override
+    public String getNombreCompletoEntidad() {
+        return "";
     }
 }

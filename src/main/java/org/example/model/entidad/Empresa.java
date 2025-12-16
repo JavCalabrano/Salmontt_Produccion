@@ -2,6 +2,7 @@ package org.example.model.entidad;
 
 import org.example.model.Direccion;
 import org.example.model.Producto;
+import org.example.model.Registrable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * Clase que hereda de Entidad atributos caracteristicos de si mismos
  */
 
-public class Empresa extends Entidad{
+public class Empresa extends Entidad implements Registrable {
 
     // Atributo de descripcion de los servicios que cada empresa, no tiene limitacion de extension pero se recomienda acotacion en el documento de información
     private String descripcion;
@@ -21,14 +22,18 @@ public class Empresa extends Entidad{
         this.descripcion = descripcion;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "Descripcion='" + descripcion + "\n\n";
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
 
+    @Override
+    public String mostrarResumen() {
+        return super.toString() +
+                "Descripcion= " + descripcion + "\n";
+    }
+
+    @Override
+    public String getTipoEntidad() {
+        return "Empleado";
+    }
 }

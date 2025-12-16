@@ -5,6 +5,7 @@ import org.example.model.Direccion;
 import org.example.model.entidad.Cliente;
 import org.example.model.entidad.Empleado;
 import org.example.model.entidad.Empresa;
+import org.example.model.entidad.Entidad;
 
 // Importando utilidades necesarias para los metodos
 import java.io.BufferedReader;
@@ -18,6 +19,26 @@ import java.util.List;
  * Esta clase se dedica a leer los datos de los diferentes archivos para crear los objetos correspondientes.
  */
 public class GestorEntidades {
+
+
+    public static List<Entidad> listarEntidades() {
+
+        List<Entidad> listaEntidades = new ArrayList<>();
+
+        for (Entidad entidad : listarEmpleados()) {
+            listaEntidades.add(entidad);
+        }
+
+        for (Entidad entidad : listarCLientes()) {
+            listaEntidades.add(entidad);
+        }
+
+        for (Entidad entidad : listarEmpresas()) {
+            listaEntidades.add(entidad);
+        }
+
+        return listaEntidades;
+    }
 
     /**
      * Metodo que crea objetos de Empleado para devolver una lista informativa
