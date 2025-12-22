@@ -1,22 +1,20 @@
 package org.example.model;
 
-public class CentroCultivo extends UnidadOperativa implements Registrable {
+public class CentroCultivo extends UnidadOperativa {
 
     private double toneladasProduccion;
 
-
+    // === CONSTRUCTOR ===
     public CentroCultivo(String nombre, Direccion direccion, int cantidadEmpleados, double toneladasProduccion) {
         super(nombre, direccion, cantidadEmpleados);
         this.toneladasProduccion = toneladasProduccion;
     }
 
+    // === METODOS ===
     @Override
-    public String mostrarResumen() {
-        return getNombre() + "/" + getTipoEntidad() + "\n" +
-                "Toneladas producidas: " + toneladasProduccion + "\n";
-    }
-
-    public String getTipoEntidad() {
+    public String getTipo() {
         return "Centro Cultivo";
     }
+
+
 }

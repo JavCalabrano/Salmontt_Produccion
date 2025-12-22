@@ -1,4 +1,4 @@
-nombre,apellido,rutId,calle,nro,comuna,telefono,email
-Daniel,Calabrano,16435274-6,Los Nogales,2558,La Reina,934628475,daniel@gmail.com
-Victor,Moya,82736442-4,San Pedro,1345,Ranco,925378463,victor@gmail.com
-Mauricio,Arancibia,10293487-5,Gran Avenida,4657,La Cisterna,937491425,mauricio@gmail.com
+nombre,apellidoPaterno,apellidoMaterno,rutId,calle,nro,comuna,telefono,email
+Daniel,Calabrano,Maluenda,16435274-6,Los Nogales,2558,La Reina,934628475,daniel@gmail.com
+Victor,Moya,Contreras,82736442-4,San Pedro,1345,Ranco,925378463,victor@gmail.com
+Mauricio,Arancibia,Valencia,10293487-5,Gran Avenida,4657,La Cisterna,937491425,mauricio@gmail.com

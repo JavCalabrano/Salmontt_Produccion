@@ -8,39 +8,22 @@ package org.example.ui;
  * Integra en esta versión la creación de objetos de UnidadOperativa usando polimorfismo y sobrecarga sobre los metodos de información entregados
  *
  * @author Javier Calabrano
- * @version 1.0
+ * @version 1.1
  */
 
 // Importacion de clases necesarias para esta versión
-import javax.swing.SwingUtilities;
-import org.example.data.GestorData;
-import org.example.model.Registrable;
-import org.example.model.UnidadOperativa;
-import org.example.gui.PantallaSalmontt;
-
-import java.util.List;
-
+import org.example.gui.PantallaSalmonttApp;
 
 public class Main {
     static void main(String[] args) {
 
-        List<Registrable> registrables = GestorData.registrables();
-        for (Registrable registrable : registrables) {
-            if (registrable instanceof UnidadOperativa) {
-                System.out.println(registrable.mostrarResumen());
-            }
-        }
+        // === INICIO DE GUI ===
+        // Logica del GUI y "principal" se haya en clase PantallaSalmontt
+
+        PantallaSalmonttApp screen = new PantallaSalmonttApp();
+        screen.setVisible(true);
+        screen.setLocationRelativeTo(null);
 
 
-        /**
-        System.out.println("hola");
-
-        SwingUtilities.invokeLater(() -> {
-            PantallaSalmontt ventanaMain = new PantallaSalmontt();
-
-            ventanaMain.setVisible(true);
-
-        });
-        */
     }
 }

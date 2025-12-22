@@ -1,33 +1,15 @@
 package org.example.data;
 
 // importando utilidades necesarias para ejecucion de metodos
-import org.example.model.Registrable;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase especializada en utilidades de filtrado de los datos especificos de los datos de cada Entidad o UnidadOperativa
  */
 public class GestorData {
-
-    public static List<Registrable> registrables() {
-
-        List<Registrable> registrables = new ArrayList<>();
-
-            for (Registrable registrable : GestorEntidades.listarEntidades()) {
-                registrables.add(registrable);
-            }
-            for (Registrable registrable : GestorUnidades.listarUnidadesOperativas()) {
-                registrables.add(registrable);
-            }
-
-        return registrables;
-    }
-
 
     /**
      * Este metodo realiza una busqueda para sumar las producciones ingresadas para el Centro de cultivo que se consulta
@@ -58,7 +40,7 @@ public class GestorData {
 
             // Validación de total, si no se encontraron coincidencias hubo un problema de ingreso
             if (total == 0){
-                System.out.println("No existe el centro o se ingreso de forma incorrecta");
+                System.out.println("1No existe el centro o se ingreso de forma incorrecta");
                 System.out.println("Ejemplo: LLanquihue (mal), llanquihue (mal), Llanquihue (perfecto)");
             }
         } catch (
@@ -88,7 +70,7 @@ public class GestorData {
                 String[] partes = linea.split(","); //divide los datos de la linea que lee del archivo
 
                 //Asignacion de valores a las variables para despues pasarlas a los atributos del objeto
-                String nombreCentro = partes[10];
+                String nombreCentro = partes[11];
 
                 // Validacion de ingreso para la consulta realizada
                 if (nombreCentro.equals(centro)) {
@@ -132,7 +114,7 @@ public class GestorData {
 
             // Validación de total, si no se encontraron coincidencias hubo un problema de ingreso
             if (total == 0){
-                System.out.println("No existe el centro o se ingreso de forma incorrecta");
+                System.out.println("3No existe el centro o se ingreso de forma incorrecta");
                 System.out.println("Ejemplo: LLanquihue (mal), llanquihue (mal), Llanquihue (perfecto)");
             }
         } catch (
@@ -157,8 +139,8 @@ public class GestorData {
                 String[] partes = linea.split(","); //divide los datos de la linea que lee del archivo
 
                 //Asignacion de valores a las variables para despues pasarlas a los atributos del objeto
-                int salario = Integer.parseInt(partes[9]);
-                String nombreCentro = partes[10];
+                int salario = Integer.parseInt(partes[10]);
+                String nombreCentro = partes[11];
 
                 // Validacion de ingreso para la consulta realizada
                 if (nombreCentro.equals(centro)) {
@@ -168,7 +150,7 @@ public class GestorData {
 
             // Validación de total, si no se encontraron coincidencias hubo un problema de ingreso
             if (total == 0){
-                System.out.println("No existe el centro o se ingreso de forma incorrecta");
+                System.out.println("4No existe el centro o se ingreso de forma incorrecta");
                 System.out.println("Ejemplo: LLanquihue (mal), llanquihue (mal), Llanquihue (perfecto)");
             }
         } catch (

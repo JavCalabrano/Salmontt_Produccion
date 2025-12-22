@@ -2,10 +2,11 @@ package org.example.data;
 
 // Importando clases necesarias e involucradas
 import org.example.model.Direccion;
-import org.example.model.entidad.Cliente;
-import org.example.model.entidad.Empleado;
-import org.example.model.entidad.Empresa;
-import org.example.model.entidad.Entidad;
+import org.example.interfaces.Registrable;
+import org.example.model.UnidadOperativa;
+import org.example.model.persona.Cliente;
+import org.example.model.persona.Empleado;
+import org.example.model.persona.Proveedores;
 
 // Importando utilidades necesarias para los metodos
 import java.io.BufferedReader;
@@ -21,19 +22,20 @@ import java.util.List;
 public class GestorEntidades {
 
 
-    public static List<Entidad> listarEntidades() {
+    // METODO PRINCIPAL DE LA CLASE PARA CREAR OBJETOS DE ENTIDADES QUE COLABORAN CON SALMONTT
+    public static List<Registrable> listarEntidades() {
 
-        List<Entidad> listaEntidades = new ArrayList<>();
+        List<Registrable> listaEntidades = new ArrayList<>();
 
-        for (Entidad entidad : listarEmpleados()) {
+        for (Registrable entidad : listarEmpleados()) {
             listaEntidades.add(entidad);
         }
 
-        for (Entidad entidad : listarCLientes()) {
+        for (Registrable entidad : listarCLientes()) {
             listaEntidades.add(entidad);
         }
 
-        for (Entidad entidad : listarEmpresas()) {
+        for (Registrable entidad : listarProveedores()) {
             listaEntidades.add(entidad);
         }
 
@@ -59,18 +61,28 @@ public class GestorEntidades {
 
                 //Asignacion de valores a las variables para despues pasarlas a los atributos del objeto
                 String nombre = partes[0];
-                String apellido = partes[1];
-                String rutId = partes[2];
-                int nro = Integer.parseInt(partes[4]);
-                Direccion direccion = new Direccion(partes[3], nro, partes[5]);
-                int  telefono = Integer.parseInt(partes[6]);
-                String email = partes[7];
-                String cargo = partes[8];
-                int salario = Integer.parseInt(partes[9]);
-                String nombreCentro = partes[10];
+                String apellidoPaterno = partes[1];
+                String apellidoMaterno = partes[2];
+                String rutId = partes[3];
+                int nro = Integer.parseInt(partes[5]);
+                Direccion direccion = new Direccion(partes[4], nro, partes[6]);
+                int  telefono = Integer.parseInt(partes[7]);
+                String email = partes[8];
+                String cargo = partes[9];
+                int salario = Integer.parseInt(partes[10]);
+                String unidadOperativa = partes[11];
+
+                List<UnidadOperativa> unidadesOperativas = GestorUnidades.listarUnidadesOperativas();
+                UnidadOperativa unidadOperativa1 = null;
+
+                for (UnidadOperativa unidad : unidadesOperativas) {
+                    if (unidad.getNombre().equalsIgnoreCase(unidadOperativa)) {
+                        unidadOperativa1 = unidad;
+                    }
+                }
 
                 //Asigancion de los atributos y creación del objeto dentro de una lista
-                empleados.add(new Empleado(nombre, apellido, rutId, direccion, telefono, email, cargo, salario, nombreCentro));
+                empleados.add(new Empleado(nombre, apellidoPaterno, apellidoMaterno, rutId, direccion, telefono, email, cargo, salario, unidadOperativa1));
             }
         }catch (IOException e) {
             System.out.println("Error en leer documento");
@@ -97,15 +109,16 @@ public class GestorEntidades {
 
                 //Asignacion de valores a las variables para despues pasarlas a los atributos del objeto
                 String nombre = partes[0];
-                String apellido = partes[1];
-                String rutId = partes[2];
-                int nro = Integer.parseInt(partes[4]);
-                Direccion direccion = new Direccion(partes[3], nro, partes[5]);
-                int  telefono = Integer.parseInt(partes[6]);
-                String email = partes[7];
+                String apellidoPaterno = partes[1];
+                String apellidoMaterno = partes[2];
+                String rutId = partes[3];
+                int nro = Integer.parseInt(partes[5]);
+                Direccion direccion = new Direccion(partes[4], nro, partes[6]);
+                int  telefono = Integer.parseInt(partes[7]);
+                String email = partes[8];
 
                 //Asigancion de los atributos y creación del objeto dentro de una lista
-                clientes.add(new Cliente(nombre, apellido, rutId, direccion, telefono, email));
+                clientes.add(new Cliente(nombre, apellidoPaterno, apellidoMaterno, rutId, direccion, telefono, email));
             }
         }catch (IOException e) {
             System.out.println("Error en leer documento");
@@ -117,10 +130,10 @@ public class GestorEntidades {
      * Metodo que crea objetos de Empresa para devolver una lista informativa
      * @return una lista con la lista de Empresas colaboradoras que trabajan con Salmontt
      */
-    public static List<Empresa> listarEmpresas(){
+    public static List<Proveedores> listarProveedores(){
         String rutaCvs = "C:\\Users\\danie\\IdeaProjects\\Salmontt_Produccion\\src\\main\\resources\\empresa.cvs";
 
-        List<Empresa> empresas = new ArrayList<>();
+        List<Proveedores> empresas = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaCvs))) {
             String linea;
@@ -139,7 +152,7 @@ public class GestorEntidades {
                 String descripcion = partes[7];
 
                 //Asigancion de los atributos y creación del objeto dentro de una lista
-                empresas.add(new Empresa(nombre, rutId, direccion, telefono, email, descripcion));
+                empresas.add(new Proveedores(nombre, rutId, direccion, telefono, email, descripcion));
             }
         }catch (IOException e) {
             System.out.println("Error en leer documento");
